@@ -15,6 +15,7 @@
 		20B81DCE283D20BE0051C008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B81DCD283D20BE0051C008 /* Assets.xcassets */; };
 		20B81DD1283D20BE0051C008 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B81DCF283D20BE0051C008 /* LaunchScreen.storyboard */; };
 		20B81DDE283E22070051C008 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B81DDD283E22070051C008 /* SearchResult.swift */; };
+		20B81DE0283E242F0051C008 /* ContributorsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B81DDF283E242E0051C008 /* ContributorsResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		20B81DD0283D20BE0051C008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20B81DD2283D20BE0051C008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20B81DDD283E22070051C008 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		20B81DDF283E242E0051C008 /* ContributorsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributorsResult.swift; sourceTree = "<group>"; };
 		9B319294FA5D79BD3BBF6861 /* Pods-GithubFetcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubFetcher.debug.xcconfig"; path = "Target Support Files/Pods-GithubFetcher/Pods-GithubFetcher.debug.xcconfig"; sourceTree = "<group>"; };
 		A1E7FD2C712F1D8114FE1F83 /* Pods-GithubFetcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubFetcher.release.xcconfig"; path = "Target Support Files/Pods-GithubFetcher/Pods-GithubFetcher.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				20B81DDD283E22070051C008 /* SearchResult.swift */,
+				20B81DDF283E242E0051C008 /* ContributorsResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20B81DC9283D20BB0051C008 /* ViewController.swift in Sources */,
+				20B81DE0283E242F0051C008 /* ContributorsResult.swift in Sources */,
 				20B81DC5283D20BB0051C008 /* AppDelegate.swift in Sources */,
 				20B81DDE283E22070051C008 /* SearchResult.swift in Sources */,
 				20B81DC7283D20BB0051C008 /* SceneDelegate.swift in Sources */,
