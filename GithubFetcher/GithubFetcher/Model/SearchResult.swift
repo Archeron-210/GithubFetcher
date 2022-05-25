@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - Data Mapping From External API JSON Response
+
 struct SearchResult: Decodable {
     var items: [ItemInfo]
 }
@@ -18,6 +20,7 @@ struct ItemInfo: Decodable {
     var language: String
     var starsCount: Int
 
+    // setting coding keys to customize property names :
     private enum CodingKeys: String, CodingKey {
         case id, fullName = "full_name", description, language, starsCount = "stargazers_count"
     }
