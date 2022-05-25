@@ -13,8 +13,12 @@ struct SearchResult: Decodable {
 
 struct ItemInfo: Decodable {
     var id: Int
-    var full_name: String
+    var fullName: String
     var description: String
     var language: String
-    var stargazers_count: Int
+    var starsCount: Int
+
+    private enum CodingKeys: String, CodingKey {
+        case id, fullName = "full_name", description, language, starsCount = "stargazers_count"
+    }
 }

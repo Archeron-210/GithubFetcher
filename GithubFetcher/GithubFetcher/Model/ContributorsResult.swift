@@ -13,5 +13,9 @@ struct ContributorsResult: Decodable {
 
 struct ContributorInfo: Decodable {
     var login: String
-    var avatar_url: String
+    var avatarUrl: String
+
+    private enum CodingKeys: String, CodingKey {
+        case login, avatarUrl = "avatar_url"
+    }
 }
