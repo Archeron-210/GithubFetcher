@@ -8,10 +8,14 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-    
+
+    let searchController = UISearchController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        title = "Search"
+        navigationItem.searchController = searchController
     }
     
 }

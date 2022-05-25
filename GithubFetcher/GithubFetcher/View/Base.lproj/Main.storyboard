@@ -16,8 +16,19 @@
                     <view key="view" contentMode="scaleToFill" id="Npd-ZX-0ti">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconsGradiantBackground" translatesAutoresizingMaskIntoConstraints="NO" id="dIi-X2-wnG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="m7W-C3-bA4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dIi-X2-wnG" firstAttribute="leading" secondItem="Npd-ZX-0ti" secondAttribute="leading" id="1KI-2I-Nfn"/>
+                            <constraint firstItem="dIi-X2-wnG" firstAttribute="top" secondItem="Npd-ZX-0ti" secondAttribute="top" id="1VQ-Lj-g2V"/>
+                            <constraint firstAttribute="trailing" secondItem="dIi-X2-wnG" secondAttribute="trailing" id="fih-cL-aDj"/>
+                            <constraint firstAttribute="bottom" secondItem="dIi-X2-wnG" secondAttribute="bottom" id="wCw-dR-Exq"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2Ns-o9-eiX"/>
                 </viewController>
@@ -32,8 +43,19 @@
                     <view key="view" contentMode="scaleToFill" id="WxY-K6-bpo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconsGradiantBackground" translatesAutoresizingMaskIntoConstraints="NO" id="exb-5T-zOn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="j0Z-Wa-WpM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="exb-5T-zOn" secondAttribute="bottom" id="25t-Wr-hLE"/>
+                            <constraint firstItem="exb-5T-zOn" firstAttribute="leading" secondItem="WxY-K6-bpo" secondAttribute="leading" id="Dci-MU-6Yg"/>
+                            <constraint firstItem="exb-5T-zOn" firstAttribute="top" secondItem="WxY-K6-bpo" secondAttribute="top" id="LKR-PU-A4E"/>
+                            <constraint firstAttribute="trailing" secondItem="exb-5T-zOn" secondAttribute="trailing" id="M7P-QD-4UV"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rXy-x5-780" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -45,9 +67,16 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n0y-lW-FLX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WSd-Vz-Zxi">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="WSd-Vz-Zxi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -60,6 +89,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="iconsGradiantBackground" width="198" height="379.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
