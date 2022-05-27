@@ -12,7 +12,7 @@ import Foundation
 
 protocol SearchViewModelDelegate: AnyObject {
     func didUpdateRepositories()
-    func didFailWithError(error: Error)
+    func didFailWithError(error: QueryError)
 }
 
 class SearchViewModel {
@@ -31,8 +31,12 @@ class SearchViewModel {
     // MARK: - Behavior
 
     func searchTextDidChange(searchText: String?) {
-        guard let searchText = searchText, !searchText.isEmpty else {
+        guard let searchText = searchText else {
             self.repositories = []
+            return
+        }
+        guard !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            self.delegate?.didFailWithError(error: .emptySearchText)
             return
         }
         searchService.obtainRepositories(searchText: searchText) { result in

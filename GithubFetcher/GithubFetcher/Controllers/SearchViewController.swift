@@ -50,8 +50,8 @@ class SearchViewController: UIViewController {
 
     // MARK: - Alert
 
-    private func searchBarAlert() {
-        let alert = UIAlertController(title: "Warning ⚠︎", message: "Search bar seems empty, please verify your query", preferredStyle: .alert)
+    private func alert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(actionAlert)
         present(alert, animated: true, completion: nil)
@@ -109,7 +109,14 @@ extension SearchViewController: SearchViewModelDelegate {
         tableView.reloadData()
     }
 
-    func didFailWithError(error: Error) {
-        searchBarAlert()
+    func didFailWithError(error: QueryError) {
+        switch error {
+        case .emptySearchText:
+            alert(title: "Warning ⚠︎", message: "Search bar seems empty, please verify your query")
+        case .noData:
+            alert(title: "Error ✕", message: "Seems like this name does not exist, please check your spelling")
+        case .callFailed, .parsingFailed:
+            alert(title: "Error ✕", message: "Something went wrong with servers, please try again later")
+        }
     }
 }

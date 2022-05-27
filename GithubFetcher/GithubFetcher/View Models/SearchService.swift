@@ -16,19 +16,23 @@ final class SearchService {
 
     // MARK: - API Call
     
-    func obtainRepositories(searchText: String, completion: @escaping (Result<[ItemInfo], Error>) -> Void) {
+    func obtainRepositories(searchText: String, completion: @escaping (Result<[ItemInfo], QueryError>) -> Void) {
         repositoryProvider.request(.showRepositories(searchText: searchText)) { result in
             switch result {
             case .success(let response):
                 do {
                     let data = try response.map(SearchResult.self)
+                    guard !data.items.isEmpty else {
+                        completion(.failure(.noData))
+                        return
+                    }
                     completion(.success(data.items))
                 }
-                catch(let error) {
-                    completion(.failure(error))
+                catch {
+                    completion(.failure(.parsingFailed))
                 }
-            case .failure(let error):
-                completion(.failure(error))
+            case .failure :
+                completion(.failure(.callFailed))
             }
         }
     }
