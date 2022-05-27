@@ -21,6 +21,6 @@ class RepositoryTableViewCell: UITableViewCell {
         nameLabel.text = repository.fullName
         descriptionLabel.text = repository.description ?? "No description available"
         let language = repository.language ?? "Not specified"
-        languageAndStargazersLabel.text = "\(language) - ✩ \(repository.starsCount) "
+        languageAndStargazersLabel.text = "\(language) - ✯ \(repository.starsCount) "
     }
 }

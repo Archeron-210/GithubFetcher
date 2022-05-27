@@ -21,32 +21,32 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XDt-Hn-QLP">
-                                <rect key="frame" x="20" y="196" width="374" height="671"/>
+                                <rect key="frame" x="20" y="199" width="374" height="668"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RepositoryCell" rowHeight="130" id="yjd-T5-fpO" customClass="RepositoryTableViewCell" customModule="GithubFetcher" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="374" height="130"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RepositoryCell" rowHeight="105" id="yjd-T5-fpO" customClass="RepositoryTableViewCell" customModule="GithubFetcher" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yjd-T5-fpO" id="rQU-Be-BPQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="130"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzu-lz-XuT">
-                                                    <rect key="frame" x="20" y="11" width="334" height="35"/>
-                                                    <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="25"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="20" y="11" width="334" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <color key="textColor" red="0.31558334830000001" green="0.70770400759999996" blue="0.9725843072" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4S-l6-nTS">
-                                                    <rect key="frame" x="20" y="49" width="334" height="28"/>
-                                                    <fontDescription key="fontDescription" name="KohinoorTelugu-Light" family="Kohinoor Telugu" pointSize="20"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="20" y="41.5" width="334" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language - ✩ 1094" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dc-Yx-qkL">
-                                                    <rect key="frame" x="20" y="82" width="334" height="28"/>
-                                                    <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="20"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language - ✯ 1094" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dc-Yx-qkL">
+                                                    <rect key="frame" x="20" y="68" width="334" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                    <color key="textColor" red="0.31558334830000001" green="0.70770400759999996" blue="0.9725843072" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -77,6 +77,7 @@
                             <searchBar contentMode="redraw" placeholder="Enter a repository name" showsSearchResultsButton="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9XH-Z7-1eb">
                                 <rect key="frame" x="0.0" y="140" width="414" height="51"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.31558334830000001" green="0.70770400759999996" blue="0.9725843072" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light" returnKeyType="go" smartDashesType="no"/>
                             </searchBar>
@@ -88,7 +89,7 @@
                             <constraint firstItem="dIi-X2-wnG" firstAttribute="top" secondItem="Npd-ZX-0ti" secondAttribute="top" id="1VQ-Lj-g2V"/>
                             <constraint firstItem="9XH-Z7-1eb" firstAttribute="trailing" secondItem="m7W-C3-bA4" secondAttribute="trailing" id="2XS-P6-NA1"/>
                             <constraint firstItem="XDt-Hn-QLP" firstAttribute="leading" secondItem="m7W-C3-bA4" secondAttribute="leading" constant="20" id="CPj-7B-4JD"/>
-                            <constraint firstItem="XDt-Hn-QLP" firstAttribute="top" secondItem="9XH-Z7-1eb" secondAttribute="bottom" constant="5" id="MW8-pl-a4S"/>
+                            <constraint firstItem="XDt-Hn-QLP" firstAttribute="top" secondItem="9XH-Z7-1eb" secondAttribute="bottom" constant="8" id="MW8-pl-a4S"/>
                             <constraint firstItem="XDt-Hn-QLP" firstAttribute="bottom" secondItem="m7W-C3-bA4" secondAttribute="bottom" constant="5" id="NAd-ms-Rtj"/>
                             <constraint firstItem="9XH-Z7-1eb" firstAttribute="leading" secondItem="m7W-C3-bA4" secondAttribute="leading" id="aao-J7-Z2g"/>
                             <constraint firstAttribute="trailing" secondItem="dIi-X2-wnG" secondAttribute="trailing" id="fih-cL-aDj"/>
