@@ -99,6 +99,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="2Ns-o9-eiX"/>
                     <connections>
+                        <outlet property="searchBar" destination="9XH-Z7-1eb" id="6Yk-8L-Bys"/>
                         <outlet property="tableView" destination="XDt-Hn-QLP" id="B8Z-x7-rDe"/>
                     </connections>
                 </viewController>

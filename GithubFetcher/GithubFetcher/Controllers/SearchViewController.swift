@@ -12,29 +12,37 @@ class SearchViewController: UIViewController {
     // MARK: - Oultlets
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
 
 
     // MARK: - Properties
 
     private let viewModel = SearchViewModel()
-    //private let searchController = UISearchController(searchResultsController: nil)
 
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
         title = "Search"
-        //navigationItem.searchController = searchController
-        setTableViewAspect()
+        setupTableView()
+        searchBar.delegate = self
+        viewModel.delegate = self
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        //tapGestureRecognizer.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGestureRecognizer)
     }
 
     // MARK: - Private
 
-    private func setTableViewAspect() {
+    private func setupTableView() {
         tableView.layer.cornerRadius = 15
+        tableView.reloadData()
     }
-    
+
+    @objc func dismissKeyboard() {
+        searchBar.resignFirstResponder()
+    }
 }
 
 extension SearchViewController: UITableViewDataSource {
@@ -54,4 +62,26 @@ extension SearchViewController: UITableViewDataSource {
 
 extension SearchViewController: UITableViewDelegate {
 
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.searchText = searchBar.text
+        searchBar.resignFirstResponder()
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.searchText = nil
+        searchBar.resignFirstResponder()
+    }
+}
+
+extension SearchViewController: SearchViewModelDelegate {
+    func didUpdateRepositories() {
+        tableView.reloadData()
+    }
+
+    func didFailWithError(error: Error) {
+        print("error \(error)")
+    }
 }
