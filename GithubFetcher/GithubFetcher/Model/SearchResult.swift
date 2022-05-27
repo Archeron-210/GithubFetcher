@@ -16,8 +16,8 @@ struct SearchResult: Decodable {
 struct ItemInfo: Decodable {
     var id: Int
     var fullName: String
-    var description: String
-    var language: String
+    var description: String?
+    var language: String?
     var starsCount: Int
 
     // setting coding keys to customize property names :

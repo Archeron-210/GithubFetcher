@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XDt-Hn-QLP">
-                                <rect key="frame" x="20" y="140" width="374" height="722"/>
+                                <rect key="frame" x="20" y="196" width="374" height="671"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RepositoryCell" rowHeight="130" id="yjd-T5-fpO" customClass="RepositoryTableViewCell" customModule="GithubFetcher" customModuleProvider="target">
@@ -74,18 +74,27 @@
                                     <outlet property="delegate" destination="FFN-GT-DGJ" id="wIX-2V-3kg"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" placeholder="Enter a repository name" showsSearchResultsButton="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9XH-Z7-1eb">
+                                <rect key="frame" x="0.0" y="140" width="414" height="51"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light" returnKeyType="go" smartDashesType="no"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m7W-C3-bA4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dIi-X2-wnG" firstAttribute="leading" secondItem="Npd-ZX-0ti" secondAttribute="leading" id="1KI-2I-Nfn"/>
                             <constraint firstItem="dIi-X2-wnG" firstAttribute="top" secondItem="Npd-ZX-0ti" secondAttribute="top" id="1VQ-Lj-g2V"/>
+                            <constraint firstItem="9XH-Z7-1eb" firstAttribute="trailing" secondItem="m7W-C3-bA4" secondAttribute="trailing" id="2XS-P6-NA1"/>
                             <constraint firstItem="XDt-Hn-QLP" firstAttribute="leading" secondItem="m7W-C3-bA4" secondAttribute="leading" constant="20" id="CPj-7B-4JD"/>
-                            <constraint firstItem="XDt-Hn-QLP" firstAttribute="bottom" secondItem="m7W-C3-bA4" secondAttribute="bottom" id="NAd-ms-Rtj"/>
+                            <constraint firstItem="XDt-Hn-QLP" firstAttribute="top" secondItem="9XH-Z7-1eb" secondAttribute="bottom" constant="5" id="MW8-pl-a4S"/>
+                            <constraint firstItem="XDt-Hn-QLP" firstAttribute="bottom" secondItem="m7W-C3-bA4" secondAttribute="bottom" constant="5" id="NAd-ms-Rtj"/>
+                            <constraint firstItem="9XH-Z7-1eb" firstAttribute="leading" secondItem="m7W-C3-bA4" secondAttribute="leading" id="aao-J7-Z2g"/>
                             <constraint firstAttribute="trailing" secondItem="dIi-X2-wnG" secondAttribute="trailing" id="fih-cL-aDj"/>
                             <constraint firstItem="m7W-C3-bA4" firstAttribute="trailing" secondItem="XDt-Hn-QLP" secondAttribute="trailing" constant="20" id="gC9-IX-mMi"/>
-                            <constraint firstItem="XDt-Hn-QLP" firstAttribute="top" secondItem="m7W-C3-bA4" secondAttribute="top" id="m77-Bh-kTc"/>
                             <constraint firstAttribute="bottom" secondItem="dIi-X2-wnG" secondAttribute="bottom" id="wCw-dR-Exq"/>
+                            <constraint firstItem="9XH-Z7-1eb" firstAttribute="top" secondItem="m7W-C3-bA4" secondAttribute="top" id="xxj-fk-uct"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2Ns-o9-eiX"/>

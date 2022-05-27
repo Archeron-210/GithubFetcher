@@ -16,8 +16,8 @@ class SearchViewController: UIViewController {
 
     // MARK: - Properties
 
-    let viewModel = SearchViewModel()
-    let searchController = UISearchController(searchResultsController: nil)
+    private let viewModel = SearchViewModel()
+    //private let searchController = UISearchController(searchResultsController: nil)
 
     // MARK: - Lifecycle
 
@@ -25,7 +25,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         title = "Search"
-        navigationItem.searchController = searchController
+        //navigationItem.searchController = searchController
         setTableViewAspect()
     }
 
@@ -44,14 +44,12 @@ extension SearchViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        return viewModel.repositories.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        return UITableViewCell()
     }
-
-
 }
 
 extension SearchViewController: UITableViewDelegate {

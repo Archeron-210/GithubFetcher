@@ -16,7 +16,7 @@ enum RepositoryService {
 
 extension RepositoryService: TargetType {
     var baseURL: URL {
-        return URL(string: "https://api.github.com/")!
+        return URL(string: "https://api.github.com")!
     }
 
     var path: String {
