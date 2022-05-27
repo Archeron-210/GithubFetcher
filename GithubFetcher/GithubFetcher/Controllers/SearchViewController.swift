@@ -28,9 +28,7 @@ class SearchViewController: UIViewController {
         setupTableView()
         searchBar.delegate = self
         viewModel.delegate = self
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        //tapGestureRecognizer.cancelsTouchesInView = false
-        view.addGestureRecognizer(tapGestureRecognizer)
+        hideKeyboardWithTapGesture()
     }
 
     // MARK: - Private
@@ -40,10 +38,28 @@ class SearchViewController: UIViewController {
         tableView.reloadData()
     }
 
-    @objc func dismissKeyboard() {
+    private func hideKeyboardWithTapGesture() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        //tapGestureRecognizer.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGestureRecognizer)
+    }
+
+    @objc private func dismissKeyboard() {
         searchBar.resignFirstResponder()
     }
+
+    // MARK: - Alert
+
+    private func searchBarAlert() {
+        let alert = UIAlertController(title: "Warning ⚠︎", message: "Search bar seems empty, please verify your query", preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(actionAlert)
+        present(alert, animated: true, completion: nil)
+    }
+
 }
+
+    // MARK: - TableView Management - DataSource
 
 extension SearchViewController: UITableViewDataSource {
     
@@ -65,6 +81,8 @@ extension SearchViewController: UITableViewDataSource {
     }
 }
 
+    // MARK: - TableView Management - Delegate
+
 extension SearchViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -84,12 +102,14 @@ extension SearchViewController: UISearchBarDelegate {
     }
 }
 
+    // MARK: - SearchViewModelDelegate
+
 extension SearchViewController: SearchViewModelDelegate {
     func didUpdateRepositories() {
         tableView.reloadData()
     }
 
     func didFailWithError(error: Error) {
-        print("error \(error)")
+        searchBarAlert()
     }
 }

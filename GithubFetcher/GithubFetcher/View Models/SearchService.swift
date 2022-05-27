@@ -9,8 +9,13 @@ import Foundation
 import Moya
 
 final class SearchService {
+
+    // MARK: - Property
+
     private let repositoryProvider = MoyaProvider<RepositoryService>()
 
+    // MARK: - API Call
+    
     func obtainRepositories(searchText: String, completion: @escaping (Result<[ItemInfo], Error>) -> Void) {
         repositoryProvider.request(.showRepositories(searchText: searchText)) { result in
             switch result {

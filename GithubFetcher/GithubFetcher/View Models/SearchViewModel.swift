@@ -6,7 +6,9 @@
 //
 
 import Foundation
-import Moya
+
+    // MARK: - SearchViewModel Protocol
+    // Allows ViewModel and Controller communications
 
 protocol SearchViewModelDelegate: AnyObject {
     func didUpdateRepositories()
@@ -14,6 +16,9 @@ protocol SearchViewModelDelegate: AnyObject {
 }
 
 class SearchViewModel {
+
+    // MARK: - Properties
+
     weak var delegate: SearchViewModelDelegate?
     private(set) var repositories: [ItemInfo] = []
     private let searchService = SearchService()
@@ -22,6 +27,8 @@ class SearchViewModel {
             self.searchTextDidChange(searchText: searchText)
         }
     }
+
+    // MARK: - Behavior
 
     func searchTextDidChange(searchText: String?) {
         guard let searchText = searchText, !searchText.isEmpty else {
