@@ -9,8 +9,13 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
-    let searchController = UISearchController()
+    // MARK: - Properties
 
+    let viewModel = SearchViewModel()
+    let searchController = UISearchController(searchResultsController: nil)
+
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

@@ -20,13 +20,31 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconsGradiantBackground" translatesAutoresizingMaskIntoConstraints="NO" id="dIi-X2-wnG">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XDt-Hn-QLP">
+                                <rect key="frame" x="20" y="140" width="374" height="722"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RepositoryCell" rowHeight="150" id="yjd-T5-fpO">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yjd-T5-fpO" id="rQU-Be-BPQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m7W-C3-bA4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dIi-X2-wnG" firstAttribute="leading" secondItem="Npd-ZX-0ti" secondAttribute="leading" id="1KI-2I-Nfn"/>
                             <constraint firstItem="dIi-X2-wnG" firstAttribute="top" secondItem="Npd-ZX-0ti" secondAttribute="top" id="1VQ-Lj-g2V"/>
+                            <constraint firstItem="XDt-Hn-QLP" firstAttribute="leading" secondItem="m7W-C3-bA4" secondAttribute="leading" constant="20" id="CPj-7B-4JD"/>
+                            <constraint firstItem="XDt-Hn-QLP" firstAttribute="bottom" secondItem="m7W-C3-bA4" secondAttribute="bottom" id="NAd-ms-Rtj"/>
                             <constraint firstAttribute="trailing" secondItem="dIi-X2-wnG" secondAttribute="trailing" id="fih-cL-aDj"/>
+                            <constraint firstItem="m7W-C3-bA4" firstAttribute="trailing" secondItem="XDt-Hn-QLP" secondAttribute="trailing" constant="20" id="gC9-IX-mMi"/>
+                            <constraint firstItem="XDt-Hn-QLP" firstAttribute="top" secondItem="m7W-C3-bA4" secondAttribute="top" id="m77-Bh-kTc"/>
                             <constraint firstAttribute="bottom" secondItem="dIi-X2-wnG" secondAttribute="bottom" id="wCw-dR-Exq"/>
                         </constraints>
                     </view>
