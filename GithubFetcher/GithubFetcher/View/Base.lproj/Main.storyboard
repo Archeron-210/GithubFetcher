@@ -24,13 +24,49 @@
                                 <rect key="frame" x="20" y="140" width="374" height="722"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RepositoryCell" rowHeight="150" id="yjd-T5-fpO">
-                                        <rect key="frame" x="0.0" y="44.5" width="374" height="150"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RepositoryCell" rowHeight="130" id="yjd-T5-fpO" customClass="RepositoryTableViewCell" customModule="GithubFetcher" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yjd-T5-fpO" id="rQU-Be-BPQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzu-lz-XuT">
+                                                    <rect key="frame" x="20" y="11" width="334" height="35"/>
+                                                    <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4S-l6-nTS">
+                                                    <rect key="frame" x="20" y="49" width="334" height="28"/>
+                                                    <fontDescription key="fontDescription" name="KohinoorTelugu-Light" family="Kohinoor Telugu" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language - ✩ 1094" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dc-Yx-qkL">
+                                                    <rect key="frame" x="20" y="82" width="334" height="28"/>
+                                                    <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="N4S-l6-nTS" firstAttribute="leading" secondItem="rQU-Be-BPQ" secondAttribute="leadingMargin" id="2SO-iM-9dY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="N4S-l6-nTS" secondAttribute="trailing" id="5GH-es-qkr"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2dc-Yx-qkL" secondAttribute="trailing" id="8OJ-mV-xON"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Jzu-lz-XuT" secondAttribute="trailing" id="EUO-VY-uja"/>
+                                                <constraint firstItem="Jzu-lz-XuT" firstAttribute="leading" secondItem="rQU-Be-BPQ" secondAttribute="leadingMargin" id="ObO-Vz-7Cz"/>
+                                                <constraint firstItem="Jzu-lz-XuT" firstAttribute="top" secondItem="rQU-Be-BPQ" secondAttribute="topMargin" id="SIT-Th-gPC"/>
+                                                <constraint firstItem="N4S-l6-nTS" firstAttribute="top" secondItem="Jzu-lz-XuT" secondAttribute="bottom" constant="3" id="Wyp-qO-Gl2"/>
+                                                <constraint firstItem="2dc-Yx-qkL" firstAttribute="top" secondItem="N4S-l6-nTS" secondAttribute="bottom" constant="5" id="lLV-d9-7oZ"/>
+                                                <constraint firstItem="2dc-Yx-qkL" firstAttribute="leading" secondItem="rQU-Be-BPQ" secondAttribute="leadingMargin" id="pnh-4V-VYW"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="N4S-l6-nTS" id="zXw-zg-7CO"/>
+                                            <outlet property="languageAndStargazersLabel" destination="2dc-Yx-qkL" id="toh-7j-ULz"/>
+                                            <outlet property="nameLabel" destination="Jzu-lz-XuT" id="5AX-yh-Tmg"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -49,6 +85,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2Ns-o9-eiX"/>
+                    <connections>
+                        <outlet property="tableView" destination="XDt-Hn-QLP" id="B8Z-x7-rDe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZ5-Ms-3zB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A604CE38EF5636ABA950B59 /* Pods_GithubFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09EEB6E6D2DCF6526BF8C2D1 /* Pods_GithubFetcher.framework */; };
 		208AD1C62840CB310072FA5E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208AD1C52840CB310072FA5E /* SearchViewModel.swift */; };
+		208AD1C82840D0C30072FA5E /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208AD1C72840D0C30072FA5E /* RepositoryTableViewCell.swift */; };
 		20B81DC5283D20BB0051C008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B81DC4283D20BB0051C008 /* AppDelegate.swift */; };
 		20B81DC7283D20BB0051C008 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B81DC6283D20BB0051C008 /* SceneDelegate.swift */; };
 		20B81DCC283D20BB0051C008 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B81DCA283D20BB0051C008 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		09EEB6E6D2DCF6526BF8C2D1 /* Pods_GithubFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		208AD1C52840CB310072FA5E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		208AD1C72840D0C30072FA5E /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		20B81DC1283D20BB0051C008 /* GithubFetcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubFetcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B81DC4283D20BB0051C008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20B81DC6283D20BB0051C008 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				20B81DCF283D20BE0051C008 /* LaunchScreen.storyboard */,
 				20B81DCA283D20BB0051C008 /* Main.storyboard */,
+				208AD1C72840D0C30072FA5E /* RepositoryTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				208AD1C82840D0C30072FA5E /* RepositoryTableViewCell.swift in Sources */,
 				20B81DE6283E96650051C008 /* ResultDetailViewController.swift in Sources */,
 				20B81DE4283E963C0051C008 /* SearchViewController.swift in Sources */,
 				208AD1C62840CB310072FA5E /* SearchViewModel.swift in Sources */,
