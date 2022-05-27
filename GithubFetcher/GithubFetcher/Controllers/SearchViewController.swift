@@ -56,12 +56,20 @@ extension SearchViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryCell", for: indexPath) as? RepositoryTableViewCell else {
+            return UITableViewCell()
+        }
+        let repository = viewModel.repositories[indexPath.row]
+        cell.configure(with: repository)
+        return cell
     }
 }
 
 extension SearchViewController: UITableViewDelegate {
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130.0
+    }
 }
 
 extension SearchViewController: UISearchBarDelegate {

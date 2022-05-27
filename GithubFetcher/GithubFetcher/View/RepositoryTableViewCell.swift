@@ -14,5 +14,10 @@ class RepositoryTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var languageAndStargazersLabel: UILabel!
 
-    
+    func configure(with repository: ItemInfo) {
+        nameLabel.text = repository.fullName
+        descriptionLabel.text = repository.description ?? "No description available"
+        let language = repository.language ?? "Not specified"
+        languageAndStargazersLabel.text = "\(language) - ✩ \(repository.starsCount) "
+    }
 }
