@@ -69,6 +69,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="FFN-GT-DGJ" id="VSr-ZR-utn"/>
+                                    <outlet property="delegate" destination="FFN-GT-DGJ" id="wIX-2V-3kg"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m7W-C3-bA4"/>
