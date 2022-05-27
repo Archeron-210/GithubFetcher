@@ -144,7 +144,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContributorCell" rowHeight="120" id="hBU-lw-hAF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContributorCell" rowHeight="120" id="hBU-lw-hAF" customClass="ContributorTableViewCell" customModule="GithubFetcher" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="104.5" width="374" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hBU-lw-hAF" id="xdM-4w-N1W">
@@ -173,6 +173,10 @@
                                                 <constraint firstItem="A5F-Rx-47L" firstAttribute="leading" secondItem="I8A-UD-LIp" secondAttribute="trailing" constant="5" id="xl2-B1-A4S"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="userNameLabel" destination="I8A-UD-LIp" id="Bhz-EA-Alp"/>
+                                            <outlet property="userProfileImageView" destination="A5F-Rx-47L" id="0BD-uV-Vvq"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
