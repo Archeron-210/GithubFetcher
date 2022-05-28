@@ -26,6 +26,7 @@ class SearchViewController: UIViewController {
 
         title = "Search"
         setupTableView()
+        setSearchBarAspect()
         searchBar.delegate = self
         viewModel.delegate = self
         hideKeyboardWithTapGesture()
@@ -35,7 +36,14 @@ class SearchViewController: UIViewController {
 
     private func setupTableView() {
         tableView.layer.cornerRadius = 15
+        tableView.backgroundColor = UIColor.white
         tableView.reloadData()
+    }
+
+    private func setSearchBarAspect() {
+        let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
+
+        textFieldInsideSearchBar?.textColor = UIColor.black
     }
 
     // MARK: - Keyboard Management
@@ -115,6 +123,7 @@ extension SearchViewController: UITableViewDelegate {
     // MARK: - SearchBar Management
 
 extension SearchViewController: UISearchBarDelegate {
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.searchText = searchBar.text
         searchBar.endEditing(true)
@@ -130,6 +139,7 @@ extension SearchViewController: UISearchBarDelegate {
     // MARK: - SearchViewModelDelegate
 
 extension SearchViewController: SearchViewModelDelegate {
+
     func didUpdateRepositories() {
         tableView.reloadData()
     }
