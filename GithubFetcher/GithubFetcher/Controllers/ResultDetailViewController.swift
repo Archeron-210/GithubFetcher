@@ -21,7 +21,7 @@ class ResultDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = viewModel?.repositoryName ?? "Repository Detail"
+        title = viewModel?.repositoryShortName ?? "Details"
         viewModel?.fetchRepositoryDetail()
         setupTableView()
     }
@@ -130,6 +130,7 @@ private extension ResultDetailViewController {
             return UITableViewCell()
         }
         cell.configure(with: branch)
+        cell.selectionStyle = .none
         return cell
     }
 
@@ -141,12 +142,13 @@ private extension ResultDetailViewController {
             return UITableViewCell()
         }
         cell.configure(with: contributor)
+        cell.selectionStyle = .none
         return cell
     }
 
     func makeHeader(title: String) -> UIView {
         let header = UIView()
-        header.backgroundColor = UIColor.white
+        header.backgroundColor = UIColor.white.withAlphaComponent(0.8)
 
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false

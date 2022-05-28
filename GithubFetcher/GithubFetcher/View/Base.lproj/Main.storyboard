@@ -121,7 +121,7 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SWh-HI-gBS">
                                 <rect key="frame" x="20" y="44" width="374" height="813"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BranchCell" rowHeight="60" id="Ivy-Vc-JZk" customClass="BranchTableViewCell" customModule="GithubFetcher" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="374" height="60"/>
@@ -143,6 +143,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="YNX-qu-qhv" secondAttribute="trailing" id="fOt-GA-hk3"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="branchNameLabel" destination="YNX-qu-qhv" id="wut-6n-3UW"/>
                                         </connections>
@@ -176,6 +177,7 @@
                                                 <constraint firstItem="A5F-Rx-47L" firstAttribute="leading" secondItem="I8A-UD-LIp" secondAttribute="trailing" constant="5" id="xl2-B1-A4S"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="userNameLabel" destination="I8A-UD-LIp" id="Bhz-EA-Alp"/>
                                             <outlet property="userProfileImageView" destination="A5F-Rx-47L" id="0BD-uV-Vvq"/>

@@ -79,6 +79,7 @@ extension SearchViewController: UITableViewDataSource {
         }
         let repository = viewModel.repositories[indexPath.row]
         cell.configure(with: repository)
+        cell.selectionStyle = .none
         return cell
     }
 }
@@ -102,7 +103,7 @@ extension SearchViewController: UITableViewDelegate {
         guard let resultDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResultDetailViewController") as? ResultDetailViewController else {
             return
         }
-        let detailViewModel = ResultDetailViewModel(repositoryName: repository.fullName, delegate: resultDetailViewController)
+        let detailViewModel = ResultDetailViewModel(repositoryName: repository.fullName, repositoryShortName: repository.name, delegate: resultDetailViewController)
         resultDetailViewController.viewModel = detailViewModel
         self.navigationController?.pushViewController(resultDetailViewController, animated: true)
     }

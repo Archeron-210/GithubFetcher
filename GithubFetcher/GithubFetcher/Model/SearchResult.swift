@@ -15,6 +15,7 @@ struct SearchResult: Decodable {
 
 struct ItemInfo: Decodable {
     var id: Int
+    var name: String
     var fullName: String
     var description: String?
     var language: String?
@@ -22,6 +23,6 @@ struct ItemInfo: Decodable {
 
     // setting coding keys to customize property names :
     private enum CodingKeys: String, CodingKey {
-        case id, fullName = "full_name", description, language, starsCount = "stargazers_count"
+        case id, name, fullName = "full_name", description, language, starsCount = "stargazers_count"
     }
 }

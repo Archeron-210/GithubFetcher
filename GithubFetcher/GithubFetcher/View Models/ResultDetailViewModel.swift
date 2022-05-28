@@ -20,12 +20,14 @@ final class ResultDetailViewModel {
     private(set) var contributors: [ContributorInfo] = []
     private(set) var branches: [BranchInfo] = []
     let repositoryName: String
+    let repositoryShortName: String
 
     // MARK: - Initialization
     
-    init(repositoryName: String, delegate: ResultDetailViewModelDelegate) {
+    init(repositoryName: String, repositoryShortName: String, delegate: ResultDetailViewModelDelegate) {
         self.repositoryName = repositoryName
         self.delegate = delegate
+        self.repositoryShortName = repositoryShortName
     }
 
     func fetchRepositoryDetail() {
