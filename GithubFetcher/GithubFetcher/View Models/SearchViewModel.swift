@@ -33,6 +33,7 @@ final class SearchViewModel {
     private func searchTextDidChange(searchText: String?) {
         guard let searchText = searchText else {
             self.repositories = []
+            self.delegate?.didUpdateRepositories()
             return
         }
         guard !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {

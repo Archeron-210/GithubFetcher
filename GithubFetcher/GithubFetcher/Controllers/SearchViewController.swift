@@ -77,6 +77,9 @@ extension SearchViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryCell", for: indexPath) as? RepositoryTableViewCell else {
             return UITableViewCell()
         }
+        guard viewModel.repositories.count > indexPath.row else {
+            return UITableViewCell()
+        }
         let repository = viewModel.repositories[indexPath.row]
         cell.configure(with: repository)
         return cell
@@ -114,12 +117,13 @@ extension SearchViewController: UITableViewDelegate {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.searchText = searchBar.text
-        searchBar.resignFirstResponder()
+        searchBar.endEditing(true)
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = nil
         viewModel.searchText = nil
-        searchBar.resignFirstResponder()
+        searchBar.endEditing(true)
     }
 }
 
