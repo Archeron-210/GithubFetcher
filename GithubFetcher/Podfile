@@ -7,4 +7,5 @@ target 'GithubFetcher' do
 
   # Pods for GithubFetcher
   pod 'Moya', '~> 15.0'
+  pod 'Kingfisher', '~> 7.0'
 end
