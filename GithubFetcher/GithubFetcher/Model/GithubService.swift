@@ -1,5 +1,5 @@
 //
-//  RepositoryService.swift
+//  GithubService.swift
 //  GithubFetcher
 //
 //  Created by Archeron on 27/05/2022.
@@ -8,13 +8,13 @@
 import Foundation
 import Moya
 
-enum RepositoryService {
+enum GithubService {
     case showRepositories(searchText: String)
     case showBranches(repositoryFullName: String)
     case showContributors(repositoryFullName: String)
 }
 
-extension RepositoryService: TargetType {
+extension GithubService: TargetType {
     var baseURL: URL {
         return URL(string: "https://api.github.com")!
     }
@@ -49,5 +49,4 @@ extension RepositoryService: TargetType {
     var headers: [String : String]? {
         return nil
     }
-
 }

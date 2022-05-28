@@ -15,7 +15,7 @@ protocol SearchViewModelDelegate: AnyObject {
     func didFailWithError(error: QueryError)
 }
 
-class SearchViewModel {
+final class SearchViewModel {
 
     // MARK: - Properties
 
@@ -28,9 +28,9 @@ class SearchViewModel {
         }
     }
 
-    // MARK: - Behavior
+    // MARK: - Search Repositories
 
-    func searchTextDidChange(searchText: String?) {
+    private func searchTextDidChange(searchText: String?) {
         guard let searchText = searchText else {
             self.repositories = []
             return

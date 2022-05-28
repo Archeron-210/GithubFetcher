@@ -88,6 +88,15 @@ extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 105.0
     }
+
+    private func goToResultDetail(for repository: ItemInfo) {
+        guard let resultDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResultDetailViewController") as? ResultDetailViewController else {
+            return
+        }
+        let detailViewModel = ResultDetailViewModel(repositoryName: repository.fullName)
+        resultDetailViewController.viewModel = detailViewModel
+        self.navigationController?.pushViewController(resultDetailViewController, animated: true)
+    }
 }
 
 extension SearchViewController: UISearchBarDelegate {

@@ -12,9 +12,9 @@ final class SearchService {
 
     // MARK: - Property
 
-    private let repositoryProvider = MoyaProvider<RepositoryService>()
+    private let repositoryProvider = MoyaProvider<GithubService>()
 
-    // MARK: - API Call
+    // MARK: - API Calls
     
     func obtainRepositories(searchText: String, completion: @escaping (Result<[ItemInfo], QueryError>) -> Void) {
         repositoryProvider.request(.showRepositories(searchText: searchText)) { result in
