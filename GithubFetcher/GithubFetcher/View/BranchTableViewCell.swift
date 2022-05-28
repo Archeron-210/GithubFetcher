@@ -9,9 +9,11 @@ import UIKit
 
 class BranchTableViewCell: UITableViewCell {
 
+    // MARK: - Outlets
 
     @IBOutlet weak var branchNameLabel: UILabel!
 
+    // MARK: - Configure
 
     func configure(with branch: BranchInfo) {
         branchNameLabel.text = branch.name

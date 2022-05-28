@@ -38,6 +38,8 @@ class SearchViewController: UIViewController {
         tableView.reloadData()
     }
 
+    // MARK: - Keyboard Management
+
     private func hideKeyboardWithTapGesture() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGestureRecognizer.cancelsTouchesInView = false
@@ -105,6 +107,8 @@ extension SearchViewController: UITableViewDelegate {
         self.navigationController?.pushViewController(resultDetailViewController, animated: true)
     }
 }
+
+    // MARK: - SearchBar Management
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

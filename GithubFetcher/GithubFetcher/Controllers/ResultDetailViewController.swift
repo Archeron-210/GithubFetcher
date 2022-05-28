@@ -34,12 +34,27 @@ class ResultDetailViewController: UIViewController {
     private func setupTableView() {
         tableView.layer.cornerRadius = 15
         tableView.reloadData()
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0
+        }
     }
 
 }
 
-    // MARK: - TableView Management - DataSource
 
+    // MARK: - ResultDetailViewModelDelegate
+
+extension ResultDetailViewController: ResultDetailViewModelDelegate {
+    func didUpdateData() {
+        tableView.reloadData()
+    }
+
+    func didFailWithError(error: QueryError) {
+        print("error")
+    }
+}
+
+    // MARK: - TableView Management - DataSource
 
 extension ResultDetailViewController: UITableViewDataSource {
 
@@ -70,9 +85,10 @@ extension ResultDetailViewController: UITableViewDataSource {
     }
 }
 
-// MARK: - TableView Management - Delegate
+    // MARK: - TableView Management - Delegate
 
 extension ResultDetailViewController: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
@@ -84,22 +100,28 @@ extension ResultDetailViewController: UITableViewDelegate {
             return 0.0
         }
     }
-}
 
-// MARK: - ResultDetailViewModelDelegate
-extension ResultDetailViewController: ResultDetailViewModelDelegate {
-    func didUpdateData() {
-        tableView.reloadData()
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch section {
+        case 0:
+            return makeHeader(title: "◦ Branches")
+        case 1:
+            return makeHeader(title: "◦ Contributors")
+        default:
+            return UIView()
+        }
     }
 
-    func didFailWithError(error: QueryError) {
-        print("error")
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        60.0
     }
 }
 
-// MARK: - Cells
+
+// MARK: - Cells & Headers Makers
 
 private extension ResultDetailViewController {
+
     func makeBranchCell(for indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "BranchCell", for: indexPath) as? BranchTableViewCell else {
             return UITableViewCell()
@@ -121,4 +143,27 @@ private extension ResultDetailViewController {
         cell.configure(with: contributor)
         return cell
     }
+
+    func makeHeader(title: String) -> UIView {
+        let header = UIView()
+        header.backgroundColor = UIColor.white
+
+        let titleLabel = UILabel()
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.text = title
+        titleLabel.font = .systemFont(ofSize: 22, weight: .medium)
+        titleLabel.textColor = UIColor.lightBlue
+        header.addSubview(titleLabel)
+
+        NSLayoutConstraint.activate([
+            titleLabel.leadingAnchor.constraint(equalTo: header.leadingAnchor, constant: 15),
+            titleLabel.trailingAnchor.constraint(equalTo: header.trailingAnchor),
+            titleLabel.topAnchor.constraint(equalTo: header.topAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: header.bottomAnchor)
+        ])
+
+        return header
+    }
+
 }
+
