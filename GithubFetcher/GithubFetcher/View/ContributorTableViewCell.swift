@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ContributorTableViewCell: UITableViewCell {
 
@@ -23,11 +24,16 @@ class ContributorTableViewCell: UITableViewCell {
 
     // MARK: - Configure
 
+    func configure(with contributor: ContributorInfo) {
+        userNameLabel.text = contributor.login
+        let avatarURL = URL(string: contributor.avatarUrl)
+        userProfileImageView.kf.setImage(with: avatarURL, placeholder: UIImage(named: "placeholderPict"))
+    }
 
     // MARK: - Private
 
     private func setProfilePictAspect() {
-        userProfileImageView.layer.cornerRadius = 64
+        userProfileImageView.layer.cornerRadius = userProfileImageView.frame.height/2
     }
 
 }

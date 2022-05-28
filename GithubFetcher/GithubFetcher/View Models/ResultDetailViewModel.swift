@@ -15,16 +15,17 @@ protocol ResultDetailViewModelDelegate: AnyObject {
 final class ResultDetailViewModel {
     // MARK: - Properties
 
-    weak var delegate: ResultDetailViewModelDelegate?
+    private weak var delegate: ResultDetailViewModelDelegate?
     private let repositoryDetailService = RepositoryDetailService()
     private(set) var contributors: [ContributorInfo] = []
     private(set) var branches: [BranchInfo] = []
-    private let repositoryName: String
+    let repositoryName: String
 
     // MARK: - Initialization
     
-    init(repositoryName: String) {
+    init(repositoryName: String, delegate: ResultDetailViewModelDelegate) {
         self.repositoryName = repositoryName
+        self.delegate = delegate
     }
 
     func fetchRepositoryDetail() {

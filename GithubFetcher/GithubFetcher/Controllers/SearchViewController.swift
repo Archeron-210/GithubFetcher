@@ -40,7 +40,7 @@ class SearchViewController: UIViewController {
 
     private func hideKeyboardWithTapGesture() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        //tapGestureRecognizer.cancelsTouchesInView = false
+        tapGestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGestureRecognizer)
     }
 
@@ -89,11 +89,18 @@ extension SearchViewController: UITableViewDelegate {
         return 105.0
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard viewModel.repositories.count > indexPath.row else {
+            return
+        }
+        goToResultDetail(for: viewModel.repositories[indexPath.row])
+    }
+
     private func goToResultDetail(for repository: ItemInfo) {
         guard let resultDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResultDetailViewController") as? ResultDetailViewController else {
             return
         }
-        let detailViewModel = ResultDetailViewModel(repositoryName: repository.fullName)
+        let detailViewModel = ResultDetailViewModel(repositoryName: repository.fullName, delegate: resultDetailViewController)
         resultDetailViewController.viewModel = detailViewModel
         self.navigationController?.pushViewController(resultDetailViewController, animated: true)
     }

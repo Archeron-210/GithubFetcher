@@ -21,14 +21,15 @@ final class RepositoryDetailService {
             switch result {
             case .success(let response):
                 do {
-                    let data = try response.map(BranchesResult.self)
-                    guard !data.branches.isEmpty else {
+                    let data = try response.map([BranchInfo].self)
+                    guard !data.isEmpty else {
                         completion(.failure(.noData))
                         return
                     }
-                    completion(.success(data.branches))
+                    completion(.success(data))
                 }
-                catch {
+                catch(let error) {
+                    print(error)
                     completion(.failure(.parsingFailed))
                 }
             case .failure:
@@ -42,12 +43,12 @@ final class RepositoryDetailService {
             switch result {
             case .success(let response):
                 do {
-                    let data = try response.map(ContributorsResult.self)
-                    guard !data.contributors.isEmpty else {
+                    let data = try response.map([ContributorInfo].self)
+                    guard !data.isEmpty else {
                         completion(.failure(.noData))
                         return
                     }
-                    completion(.success(data.contributors))
+                    completion(.success(data))
                 }
                 catch {
                     completion(.failure(.parsingFailed))

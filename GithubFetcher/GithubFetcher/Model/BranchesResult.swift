@@ -9,10 +9,6 @@ import Foundation
 
 // MARK: - Data Mapping From External API JSON Response
 
-struct BranchesResult: Decodable {
-    var branches: [BranchInfo]
-}
-
 struct BranchInfo: Decodable {
     var name: String
 }

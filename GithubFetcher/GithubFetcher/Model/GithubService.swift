@@ -24,9 +24,9 @@ extension GithubService: TargetType {
         case .showRepositories:
             return "/search/repositories"
         case .showBranches(repositoryFullName: let repositoryFullName):
-            return "\(repositoryFullName)/branches"
+            return "/repos/\(repositoryFullName)/branches"
         case .showContributors(repositoryFullName: let repositoryFullName):
-            return "\(repositoryFullName)/contributors"
+            return "/repos/\(repositoryFullName)/contributors"
         }
     }
 

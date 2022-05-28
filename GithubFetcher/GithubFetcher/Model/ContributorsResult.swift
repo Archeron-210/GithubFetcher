@@ -9,10 +9,6 @@ import Foundation
 
 // MARK: - Data Mapping From External API JSON Response
 
-struct ContributorsResult: Decodable {
-    var contributors: [ContributorInfo]
-}
-
 struct ContributorInfo: Decodable {
     var login: String
     var avatarUrl: String
