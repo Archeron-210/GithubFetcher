@@ -34,11 +34,11 @@ class ResultDetailViewController: UIViewController {
     private func setupTableView() {
         tableView.layer.cornerRadius = 15
         tableView.reloadData()
+        tableView.backgroundColor = UIColor.white
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0
         }
     }
-
 }
 
 
@@ -147,8 +147,22 @@ private extension ResultDetailViewController {
     }
 
     func makeHeader(title: String) -> UIView {
+
+
         let header = UIView()
-        header.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        //header.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+
+        let blurEffect = UIBlurEffect(style: .light)
+        let blurVisual = UIVisualEffectView(effect: blurEffect)
+        header.addSubview(blurVisual)
+
+        blurVisual.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            blurVisual.leadingAnchor.constraint(equalTo: header.leadingAnchor),
+            blurVisual.trailingAnchor.constraint(equalTo: header.trailingAnchor),
+            blurVisual.topAnchor.constraint(equalTo: header.topAnchor),
+            blurVisual.bottomAnchor.constraint(equalTo: header.bottomAnchor)
+        ])
 
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false

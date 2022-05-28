@@ -79,7 +79,6 @@ extension SearchViewController: UITableViewDataSource {
         }
         let repository = viewModel.repositories[indexPath.row]
         cell.configure(with: repository)
-        cell.selectionStyle = .none
         return cell
     }
 }
@@ -96,6 +95,7 @@ extension SearchViewController: UITableViewDelegate {
         guard viewModel.repositories.count > indexPath.row else {
             return
         }
+        tableView.deselectRow(at: indexPath, animated: true)
         goToResultDetail(for: viewModel.repositories[indexPath.row])
     }
 
