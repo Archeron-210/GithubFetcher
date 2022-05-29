@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         UINavigationBar.appearance().tintColor = UIColor.black
+        UINavigationBar.appearance().prefersLargeTitles = true
 
         let navController = UINavigationController()
         let coordinator = MainCoordinator(navigationController: navController)
