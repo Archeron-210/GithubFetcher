@@ -12,6 +12,7 @@ protocol SearchCoordinatorProtocol: AnyObject {
 }
 
 class SearchCoordinator: Coordinator {
+
     // MARK: - Properties
 
     var childCoordinators: [Coordinator] = []
@@ -33,7 +34,10 @@ class SearchCoordinator: Coordinator {
     }
 }
 
+    // MARK: - SearchCoordinatorProtocol
+
 extension SearchCoordinator: SearchCoordinatorProtocol {
+
     func showRepositoryDetail(for repository: ItemInfo) {
         let coordinator = RepositoryDetailCoordinator(navigationController: navigationController, repository: repository)
         coordinator.parentCoordinator = self

@@ -43,8 +43,14 @@ class SearchViewController: UIViewController, Storyboarded {
 
     private func setSearchBarAspect() {
         let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
-
         textFieldInsideSearchBar?.textColor = UIColor.black
+    }
+
+    private func alert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(actionAlert)
+        present(alert, animated: true, completion: nil)
     }
 
     // MARK: - Keyboard Management
@@ -58,16 +64,43 @@ class SearchViewController: UIViewController, Storyboarded {
     @objc private func dismissKeyboard() {
         searchBar.resignFirstResponder()
     }
+}
 
-    // MARK: - Alert
+    // MARK: - SearchBar Management
 
-    private func alert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(actionAlert)
-        present(alert, animated: true, completion: nil)
+extension SearchViewController: UISearchBarDelegate {
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.searchText = searchBar.text
+        searchBar.endEditing(true)
     }
 
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = nil
+        viewModel.searchText = nil
+        searchBar.endEditing(true)
+    }
+}
+
+
+    // MARK: - SearchViewModelDelegate
+
+extension SearchViewController: SearchViewModelDelegate {
+
+    func didUpdateRepositories() {
+        tableView.reloadData()
+    }
+
+    func didFailWithError(error: QueryError) {
+        switch error {
+        case .emptySearchText:
+            alert(title: "Warning ⚠︎", message: "Search bar seems empty, please verify your query")
+        case .noData:
+            alert(title: "Error ✕", message: "Seems like this name does not exist, please check your spelling")
+        case .callFailed, .parsingFailed:
+            alert(title: "Error ✕", message: "Something went wrong with servers, please try again later")
+        }
+    }
 }
 
     // MARK: - TableView Management - DataSource
@@ -112,41 +145,7 @@ extension SearchViewController: UITableViewDelegate {
     }
 }
 
-    // MARK: - SearchBar Management
-
-extension SearchViewController: UISearchBarDelegate {
-
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.searchText = searchBar.text
-        searchBar.endEditing(true)
-    }
-
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text = nil
-        viewModel.searchText = nil
-        searchBar.endEditing(true)
-    }
-}
-
-    // MARK: - SearchViewModelDelegate
-
-extension SearchViewController: SearchViewModelDelegate {
-
-    func didUpdateRepositories() {
-        tableView.reloadData()
-    }
-
-    func didFailWithError(error: QueryError) {
-        switch error {
-        case .emptySearchText:
-            alert(title: "Warning ⚠︎", message: "Search bar seems empty, please verify your query")
-        case .noData:
-            alert(title: "Error ✕", message: "Seems like this name does not exist, please check your spelling")
-        case .callFailed, .parsingFailed:
-            alert(title: "Error ✕", message: "Something went wrong with servers, please try again later")
-        }
-    }
-}
+    // MARK: - Coodinatorable Implementation
 
 extension SearchViewController: Coordinatorable {
     var genericCoordinator: Coordinator? {

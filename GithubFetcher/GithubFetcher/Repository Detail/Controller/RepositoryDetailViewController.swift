@@ -27,9 +27,6 @@ class RepositoryDetailViewController: UIViewController, Storyboarded {
         setupTableView()
     }
 
-    // MARK: - Functions
-
-
     // MARK: - Private
 
     private func setupTableView() {
@@ -39,6 +36,13 @@ class RepositoryDetailViewController: UIViewController, Storyboarded {
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0
         }
+    }
+
+    private func alert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(actionAlert)
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -51,7 +55,14 @@ extension RepositoryDetailViewController: RepositoryDetailViewModelDelegate {
     }
 
     func didFailWithError(error: QueryError) {
-        print("error")
+        switch error {
+        case .noData:
+            alert(title: "Error ✕", message: "Seems like there is nothing to see here !")
+        case .callFailed, .parsingFailed:
+            alert(title: "Error ✕", message: "Something went wrong with servers, please try again later")
+        default:
+            break
+        }
     }
 }
 
@@ -118,7 +129,7 @@ extension RepositoryDetailViewController: UITableViewDelegate {
 }
 
 
-// MARK: - Cells & Headers Makers
+    // MARK: - Cells & Headers Makers
 
 private extension RepositoryDetailViewController {
 
@@ -174,11 +185,11 @@ private extension RepositoryDetailViewController {
             titleLabel.topAnchor.constraint(equalTo: header.topAnchor),
             titleLabel.bottomAnchor.constraint(equalTo: header.bottomAnchor)
         ])
-
         return header
     }
-
 }
+
+    // MARK: - Coodinatorable Implementation
 
 extension RepositoryDetailViewController: Coordinatorable {
     var genericCoordinator: Coordinator? {
