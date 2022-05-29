@@ -8,13 +8,17 @@
 import UIKit
 
 protocol Coordinator: AnyObject {
-    var parentCoordinator: Coordinator? { get set }
-    var childCoordinators: [Coordinator] { get set }
+    // Used by all coordinators
     var navigationController: UINavigationController { get set }
-
     func start()
-    func finish()
+
+    // Used by parent coordinators
+    var childCoordinators: [Coordinator] { get set }
     func finish(child: Coordinator)
+
+    // Used by child coordinators
+    var parentCoordinator: Coordinator? { get set }
+    func finish()
 }
 
 extension Coordinator {
