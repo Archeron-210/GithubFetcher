@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n0y-lW-FLX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -109,10 +109,10 @@
             </objects>
             <point key="canvasLocation" x="753.62318840579712" y="94.419642857142847"/>
         </scene>
-        <!--Result Detail View Controller-->
+        <!--Repository Detail View Controller-->
         <scene sceneID="A7U-2a-CK1">
             <objects>
-                <viewController storyboardIdentifier="ResultDetailViewController" id="Sxf-iU-zpg" customClass="ResultDetailViewController" customModule="GithubFetcher" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RepositoryDetailViewController" id="Sxf-iU-zpg" customClass="RepositoryDetailViewController" customModule="GithubFetcher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WxY-K6-bpo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

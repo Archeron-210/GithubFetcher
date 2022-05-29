@@ -1,5 +1,5 @@
 //
-//  ResultDetailViewController.swift
+//  RepositoryDetailViewController.swift
 //  GithubFetcher
 //
 //  Created by Archeron on 25/05/2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ResultDetailViewController: UIViewController {
+class RepositoryDetailViewController: UIViewController, Storyboarded {
 
     // MARK: - Outlets
 
@@ -15,7 +15,8 @@ class ResultDetailViewController: UIViewController {
 
     // MARK: - Properties
 
-    var viewModel: ResultDetailViewModel?
+    weak var coordinator: RepositoryDetailCoordinator?
+    var viewModel: RepositoryDetailViewModel?
 
     // MARK: - Life Cycle
 
@@ -42,9 +43,9 @@ class ResultDetailViewController: UIViewController {
 }
 
 
-    // MARK: - ResultDetailViewModelDelegate
+    // MARK: - RepositoryDetailViewModelDelegate
 
-extension ResultDetailViewController: ResultDetailViewModelDelegate {
+extension RepositoryDetailViewController: RepositoryDetailViewModelDelegate {
     func didUpdateData() {
         tableView.reloadData()
     }
@@ -56,7 +57,7 @@ extension ResultDetailViewController: ResultDetailViewModelDelegate {
 
     // MARK: - TableView Management - DataSource
 
-extension ResultDetailViewController: UITableViewDataSource {
+extension RepositoryDetailViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -87,7 +88,7 @@ extension ResultDetailViewController: UITableViewDataSource {
 
     // MARK: - TableView Management - Delegate
 
-extension ResultDetailViewController: UITableViewDelegate {
+extension RepositoryDetailViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
@@ -96,8 +97,7 @@ extension ResultDetailViewController: UITableViewDelegate {
         case 1:
             return 120.0
         default:
-            #warning("TODO: Test default case")
-            return 0.0
+            return 44.0
         }
     }
 
@@ -120,7 +120,7 @@ extension ResultDetailViewController: UITableViewDelegate {
 
 // MARK: - Cells & Headers Makers
 
-private extension ResultDetailViewController {
+private extension RepositoryDetailViewController {
 
     func makeBranchCell(for indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "BranchCell", for: indexPath) as? BranchTableViewCell else {
@@ -147,10 +147,7 @@ private extension ResultDetailViewController {
     }
 
     func makeHeader(title: String) -> UIView {
-
-
         let header = UIView()
-        //header.backgroundColor = UIColor.white.withAlphaComponent(0.8)
 
         let blurEffect = UIBlurEffect(style: .light)
         let blurVisual = UIVisualEffectView(effect: blurEffect)
@@ -183,3 +180,8 @@ private extension ResultDetailViewController {
 
 }
 
+extension RepositoryDetailViewController: Coordinatorable {
+    var genericCoordinator: Coordinator? {
+        return coordinator
+    }
+}

@@ -108,16 +108,7 @@ extension SearchViewController: UITableViewDelegate {
             return
         }
         tableView.deselectRow(at: indexPath, animated: true)
-        goToResultDetail(for: viewModel.repositories[indexPath.row])
-    }
-
-    private func goToResultDetail(for repository: ItemInfo) {
-        guard let resultDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResultDetailViewController") as? ResultDetailViewController else {
-            return
-        }
-        let detailViewModel = ResultDetailViewModel(repositoryName: repository.fullName, repositoryShortName: repository.name, delegate: resultDetailViewController)
-        resultDetailViewController.viewModel = detailViewModel
-        self.navigationController?.pushViewController(resultDetailViewController, animated: true)
+        self.coordinator?.showRepositoryDetail(for: viewModel.repositories[indexPath.row])
     }
 }
 
@@ -154,5 +145,11 @@ extension SearchViewController: SearchViewModelDelegate {
         case .callFailed, .parsingFailed:
             alert(title: "Error ✕", message: "Something went wrong with servers, please try again later")
         }
+    }
+}
+
+extension SearchViewController: Coordinatorable {
+    var genericCoordinator: Coordinator? {
+        return coordinator
     }
 }

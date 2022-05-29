@@ -10,13 +10,15 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var coordinator: MainCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         UINavigationBar.appearance().tintColor = UIColor.black
 
         let navController = UINavigationController()
-        let coordinator = SearchCoordinator(navigationController: navController)
+        let coordinator = MainCoordinator(navigationController: navController)
+        self.coordinator = coordinator
         coordinator.start()
 
         window = UIWindow(frame: UIScreen.main.bounds)

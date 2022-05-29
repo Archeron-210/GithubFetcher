@@ -12,16 +12,23 @@ class RepositoryDetailCoordinator: Coordinator {
 
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
+    weak var parentCoordinator: Coordinator?
+    private var repository: ItemInfo
 
     // MARK: - Initialization
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, repository: ItemInfo) {
         self.navigationController = navigationController
+        self.repository = repository
     }
 
     // MARK: - Start
 
     func start() {
-
+        let repositoryDetailViewController = RepositoryDetailViewController.instantiate()
+        repositoryDetailViewController.coordinator = self
+        let detailViewModel = RepositoryDetailViewModel(repositoryName: repository.fullName, repositoryShortName: repository.name, delegate: repositoryDetailViewController)
+        repositoryDetailViewController.viewModel = detailViewModel
+        navigationController.pushViewController(repositoryDetailViewController, animated: true)
     }
 }

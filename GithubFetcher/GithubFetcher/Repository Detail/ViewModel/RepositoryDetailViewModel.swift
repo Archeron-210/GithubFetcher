@@ -1,5 +1,5 @@
 //
-//  ResultDetailViewModel.swift
+//  RepositoryDetailViewModel.swift
 //  GithubFetcher
 //
 //  Created by Archeron on 28/05/2022.
@@ -7,15 +7,15 @@
 
 import Foundation
 
-protocol ResultDetailViewModelDelegate: AnyObject {
+protocol RepositoryDetailViewModelDelegate: AnyObject {
     func didUpdateData()
     func didFailWithError(error: QueryError)
 }
 
-final class ResultDetailViewModel {
+final class RepositoryDetailViewModel {
     // MARK: - Properties
 
-    private weak var delegate: ResultDetailViewModelDelegate?
+    private weak var delegate: RepositoryDetailViewModelDelegate?
     private let repositoryDetailService = RepositoryDetailService()
     private(set) var contributors: [ContributorInfo] = []
     private(set) var branches: [BranchInfo] = []
@@ -24,7 +24,7 @@ final class ResultDetailViewModel {
 
     // MARK: - Initialization
     
-    init(repositoryName: String, repositoryShortName: String, delegate: ResultDetailViewModelDelegate) {
+    init(repositoryName: String, repositoryShortName: String, delegate: RepositoryDetailViewModelDelegate) {
         self.repositoryName = repositoryName
         self.delegate = delegate
         self.repositoryShortName = repositoryShortName
