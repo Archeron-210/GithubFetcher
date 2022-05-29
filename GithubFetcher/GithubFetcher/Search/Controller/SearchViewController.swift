@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, Storyboarded {
 
     // MARK: - Oultlets
 
@@ -17,6 +17,7 @@ class SearchViewController: UIViewController {
 
     // MARK: - Properties
 
+    weak var coordinator: SearchCoordinator?
     private let viewModel = SearchViewModel()
 
     // MARK: - Lifecycle

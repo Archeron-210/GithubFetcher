@@ -15,7 +15,6 @@
 		208AD1C82840D0C30072FA5E /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208AD1C72840D0C30072FA5E /* RepositoryTableViewCell.swift */; };
 		208AD1CA2840D8310072FA5E /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208AD1C92840D8310072FA5E /* GithubService.swift */; };
 		20B81DC5283D20BB0051C008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B81DC4283D20BB0051C008 /* AppDelegate.swift */; };
-		20B81DC7283D20BB0051C008 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B81DC6283D20BB0051C008 /* SceneDelegate.swift */; };
 		20B81DCC283D20BB0051C008 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B81DCA283D20BB0051C008 /* Main.storyboard */; };
 		20B81DCE283D20BE0051C008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B81DCD283D20BE0051C008 /* Assets.xcassets */; };
 		20B81DD1283D20BE0051C008 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B81DCF283D20BE0051C008 /* LaunchScreen.storyboard */; };
@@ -28,6 +27,10 @@
 		20D13C2C28422E430076D51C /* RepositoryDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D13C2B28422E430076D51C /* RepositoryDetailService.swift */; };
 		20D13C2E2842354D0076D51C /* BranchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D13C2D2842354D0076D51C /* BranchTableViewCell.swift */; };
 		20D13C32284258500076D51C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D13C31284258500076D51C /* UIColor+Extension.swift */; };
+		20D13C422843A75E0076D51C /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D13C412843A75E0076D51C /* Storyboarded.swift */; };
+		20D13C452843A87D0076D51C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D13C442843A87D0076D51C /* Coordinator.swift */; };
+		20D13C472843A9240076D51C /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D13C462843A9240076D51C /* SearchCoordinator.swift */; };
+		20D13C492843A9FC0076D51C /* RepositoryDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D13C482843A9FC0076D51C /* RepositoryDetailCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +43,6 @@
 		208AD1C92840D8310072FA5E /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
 		20B81DC1283D20BB0051C008 /* GithubFetcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubFetcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B81DC4283D20BB0051C008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		20B81DC6283D20BB0051C008 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		20B81DCB283D20BB0051C008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20B81DCD283D20BE0051C008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20B81DD0283D20BE0051C008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +56,10 @@
 		20D13C2B28422E430076D51C /* RepositoryDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailService.swift; sourceTree = "<group>"; };
 		20D13C2D2842354D0076D51C /* BranchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchTableViewCell.swift; sourceTree = "<group>"; };
 		20D13C31284258500076D51C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		20D13C412843A75E0076D51C /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		20D13C442843A87D0076D51C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		20D13C462843A9240076D51C /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		20D13C482843A9FC0076D51C /* RepositoryDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailCoordinator.swift; sourceTree = "<group>"; };
 		9B319294FA5D79BD3BBF6861 /* Pods-GithubFetcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubFetcher.debug.xcconfig"; path = "Target Support Files/Pods-GithubFetcher/Pods-GithubFetcher.debug.xcconfig"; sourceTree = "<group>"; };
 		A1E7FD2C712F1D8114FE1F83 /* Pods-GithubFetcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubFetcher.release.xcconfig"; path = "Target Support Files/Pods-GithubFetcher/Pods-GithubFetcher.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				20D13C31284258500076D51C /* UIColor+Extension.swift */,
+				20D13C412843A75E0076D51C /* Storyboarded.swift */,
+				20D13C442843A87D0076D51C /* Coordinator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -114,7 +122,6 @@
 			children = (
 				20B81DCD283D20BE0051C008 /* Assets.xcassets */,
 				20B81DC4283D20BB0051C008 /* AppDelegate.swift */,
-				20B81DC6283D20BB0051C008 /* SceneDelegate.swift */,
 				20B81DD2283D20BE0051C008 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -151,6 +158,7 @@
 		20D13C362843A5050076D51C /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				20D13C462843A9240076D51C /* SearchCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -240,6 +248,7 @@
 		20D13C402843A6720076D51C /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				20D13C482843A9FC0076D51C /* RepositoryDetailCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -377,10 +386,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				208AD1C82840D0C30072FA5E /* RepositoryTableViewCell.swift in Sources */,
+				20D13C492843A9FC0076D51C /* RepositoryDetailCoordinator.swift in Sources */,
 				208AD1CA2840D8310072FA5E /* GithubService.swift in Sources */,
 				20B81DE6283E96650051C008 /* ResultDetailViewController.swift in Sources */,
 				2080491828410D60003A2C3B /* SearchService.swift in Sources */,
 				20D13C32284258500076D51C /* UIColor+Extension.swift in Sources */,
+				20D13C422843A75E0076D51C /* Storyboarded.swift in Sources */,
+				20D13C452843A87D0076D51C /* Coordinator.swift in Sources */,
 				20B81DE4283E963C0051C008 /* SearchViewController.swift in Sources */,
 				20D13C2E2842354D0076D51C /* BranchTableViewCell.swift in Sources */,
 				208AD1C62840CB310072FA5E /* SearchViewModel.swift in Sources */,
@@ -390,8 +402,8 @@
 				20B81DE2283E25090051C008 /* BranchInfo.swift in Sources */,
 				20B81DC5283D20BB0051C008 /* AppDelegate.swift in Sources */,
 				20D13C2A284223F50076D51C /* ResultDetailViewModel.swift in Sources */,
+				20D13C472843A9240076D51C /* SearchCoordinator.swift in Sources */,
 				20B81DDE283E22070051C008 /* SearchResult.swift in Sources */,
-				20B81DC7283D20BB0051C008 /* SceneDelegate.swift in Sources */,
 				2080491C2841426E003A2C3B /* ContributorTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,7 +558,6 @@
 				INFOPLIST_FILE = "GithubFetcher/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -578,7 +589,6 @@
 				INFOPLIST_FILE = "GithubFetcher/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
