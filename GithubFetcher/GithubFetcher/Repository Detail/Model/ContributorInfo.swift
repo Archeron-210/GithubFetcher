@@ -1,5 +1,5 @@
 //
-//  ContributorsResult.swift
+//  ContributorInfo.swift
 //  GithubFetcher
 //
 //  Created by Archeron on 25/05/2022.
