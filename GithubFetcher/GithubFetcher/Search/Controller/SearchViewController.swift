@@ -141,7 +141,7 @@ extension SearchViewController: UITableViewDelegate {
             return
         }
         tableView.deselectRow(at: indexPath, animated: true)
-        self.coordinator?.showRepositoryDetail(for: viewModel.repositories[indexPath.row])
+        coordinator?.showRepositoryDetail(for: viewModel.repositories[indexPath.row])
     }
 }
 

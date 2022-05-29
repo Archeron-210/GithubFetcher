@@ -28,8 +28,7 @@ final class RepositoryDetailService {
                     }
                     completion(.success(data))
                 }
-                catch(let error) {
-                    print(error)
+                catch {
                     completion(.failure(.parsingFailed))
                 }
             case .failure:

@@ -24,7 +24,7 @@ final class SearchViewModel {
     private let searchService = SearchService()
     var searchText: String? {
         didSet {
-            self.searchTextDidChange(searchText: searchText)
+            searchTextDidChange(searchText: searchText)
         }
     }
 
@@ -32,12 +32,12 @@ final class SearchViewModel {
 
     private func searchTextDidChange(searchText: String?) {
         guard let searchText = searchText else {
-            self.repositories = []
-            self.delegate?.didUpdateRepositories()
+            repositories = []
+            delegate?.didUpdateRepositories()
             return
         }
         guard !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            self.delegate?.didFailWithError(error: .emptySearchText)
+            delegate?.didFailWithError(error: .emptySearchText)
             return
         }
         searchService.obtainRepositories(searchText: searchText) { result in

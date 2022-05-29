@@ -32,6 +32,6 @@ extension Coordinator {
     }
 
     func finish() {
-        self.parentCoordinator?.finish(child: self)
+        parentCoordinator?.finish(child: self)
     }
 }
