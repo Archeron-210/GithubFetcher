@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RepositoryTableViewCell: UITableViewCell {
+final class RepositoryTableViewCell: UITableViewCell {
 
     // MARK: - Outlets
 

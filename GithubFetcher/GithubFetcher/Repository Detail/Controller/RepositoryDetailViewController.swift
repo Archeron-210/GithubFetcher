@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RepositoryDetailViewController: UIViewController, Storyboarded {
+final class RepositoryDetailViewController: UIViewController, Storyboarded {
 
     // MARK: - Outlets
 

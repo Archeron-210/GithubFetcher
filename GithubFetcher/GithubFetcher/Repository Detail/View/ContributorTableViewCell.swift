@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class ContributorTableViewCell: UITableViewCell {
+final class ContributorTableViewCell: UITableViewCell {
 
     // MARK: - Outlets
 

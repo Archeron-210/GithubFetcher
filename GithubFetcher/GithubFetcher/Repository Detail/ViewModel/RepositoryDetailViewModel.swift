@@ -7,12 +7,16 @@
 
 import Foundation
 
+    // MARK: - RepositoryDetailViewModel Protocol
+    // Allows ViewModel and Controller communications
+
 protocol RepositoryDetailViewModelDelegate: AnyObject {
     func didUpdateData()
     func didFailWithError(error: QueryError)
 }
 
 final class RepositoryDetailViewModel {
+    
     // MARK: - Properties
 
     private weak var delegate: RepositoryDetailViewModelDelegate?

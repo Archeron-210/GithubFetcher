@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BranchTableViewCell: UITableViewCell {
+final class BranchTableViewCell: UITableViewCell {
 
     // MARK: - Outlets
 

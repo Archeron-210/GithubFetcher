@@ -11,7 +11,7 @@ protocol SearchCoordinatorProtocol: AnyObject {
     func showRepositoryDetail(for repository: ItemInfo)
 }
 
-class SearchCoordinator: Coordinator {
+final class SearchCoordinator: Coordinator {
 
     // MARK: - Properties
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, Storyboarded {
+final class SearchViewController: UIViewController, Storyboarded {
 
     // MARK: - Oultlets
 

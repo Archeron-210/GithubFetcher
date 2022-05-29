@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RepositoryDetailCoordinator: Coordinator {
+final class RepositoryDetailCoordinator: Coordinator {
     // MARK: - Properties
 
     var childCoordinators: [Coordinator] = []
